@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="xmas.css">
+    <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas|Pacifico" rel="stylesheet">
+    <title>Christmas Card</title>
+</head>
+<body>
+<div class='landscape'>
+    <h1>
+        Merry Christmas and a Happy New Year!
+    </h1>
+    <h3>
+        You better watch out, you better not cry <br>
+        Better not pout, I am telling you why <br>
+        Santa Claus is coming to town.. ♪
+    </h3>
+    <div id="smoke">
+        <span class="s0"></span>
+        <span class="s1"></span>
+        <span class="s2"></span>
+        <span class="s3"></span>
+        <span class="s4"></span>
+        <span class="s5"></span>
+        <span class="s6"></span>
+        <span class="s7"></span>
+        <span class="s8"></span>
+        <span class="s9"></span>
+    </div>
+</div>
+
+<canvas id='snow'></canvas>
+<script>
+    // https://codepen.io/otsukatomoya/pen/gbDxF/
+
+    var w = window.innerWidth,
+        h = window.innerHeight,
+        canvas = document.getElementById('snow'),
+        ctx = canvas.getContext('2d'),
+        rate = 40,
+        arc = 500,
+        time,
+        count,
+        size = 2,
+        speed = 10,
+        lights = new Array,
+        colors = ['#eee'];
+
+    canvas.setAttribute('width', w);
+    canvas.setAttribute('height', h);
+
+    function init() {
+        time = 0;
+        count = 0;
+
+        for (var i = 0; i < arc; i++) {
+            lights[i] = {
+                x: Math.ceil(Math.random() * w),
+                y: Math.ceil(Math.random() * h),
+                toX: Math.random() * 5 + 1,
+                toY: Math.random() * 5 + 1,
+                c: colors[Math.floor(Math.random() * colors.length)],
+                size: Math.random() * size
+            }
+        }
+    }
+
+    function bubble() {
+        ctx.clearRect(0, 0, w, h);
+
+        for (var i = 0; i < arc; i++) {
+            var li = lights[i];
+
+            ctx.beginPath();
+            ctx.arc(li.x, li.y, li.size, 0, Math.PI * 2, false);
+            ctx.fillStyle = li.c;
+            ctx.fill();
+
+            li.x = li.x + li.toX * (time * 0.05);
+            li.y = li.y + li.toY * (time * 0.05);
+
+            if (li.x > w) {
+                li.x = 0;
+            }
+            if (li.y > h) {
+                li.y = 0;
+            }
+            if (li.x < 0) {
+                li.x = w;
+            }
+            if (li.y < 0) {
+                li.y = h;
+            }
+        }
+        if (time < speed) {
+            time++;
+        }
+        timerID = setTimeout(bubble, 1000 / rate);
+    }
+
+    init();
+    bubble();
+</script>
+</html>
