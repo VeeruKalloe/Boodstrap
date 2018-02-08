@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ice Hockey Shop || Winkelwagentje</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="webshop.css">
+</head>
+
+<body>
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">Ice Hockey</a>
+        <a href="index.html">Home</a>
+        <a href="webshop.html">Webshop</a>
+        <a class="active" href="winkelwagentje.html">Winkelwagentje</a>
+    </div><!-- container -->
+</nav>
+<section class="section1">
+    <h1 class="title1 container">Ice Hockey</h1>
+    <p class="title2 container">Site over icehockey</p>
+</section>
+
+<div id="app" class="container">
+    <div class="row">
+        <div class="col-md-1 offset-md-7">
+            <p>Aantal:</p>
+
+        </div>
+        <div class="col-md-1">
+            <p>Subtotaal:</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img style="width: 175px;height: 175px;" src="icehockey/img/skates/skates1.jpg" alt="">
+        </div>
+        <div class="col-md-4">
+            <h3>Svensson skates</h3>
+            <p>Model: BRR</p>
+            <p>Price: €45,-</p>
+        </div>
+        <div class="col-md-1">
+            <input v-model="skates1" min="0" class="form-control aantal" data-price="45" value="0" type="number" id="schaat1">
+        </div>
+        <div class="col-md-2">
+            0
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img style="width: 175px;height: 175px;" src="icehockey/img/skates/skates3.png" alt="">
+        </div>
+        <div class="col-md-4">
+            <h3>Bensson skates</h3>
+            <p>Model: BH50</p>
+            <p>Price: €55,-</p>
+        </div>
+        <div class="col-md-1">
+            <input v-model="skates2" min="0" class="form-control aantal" data-price="55" value="0" type="number" id="schaat2">
+        </div>
+        <div class="col-md-2">
+            0
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <img style="width: 175px;height: 175px;" src="icehockey/img/skates/skates4.jpg" alt="">
+        </div>
+        <div class="col-md-4">
+            <h3>Karlsson skates</h3>
+            <p>Model: QW90</p>
+            <p>Price: €65,-</p>
+        </div>
+        <div class="col-md-1">
+            <input v-model="skates3" min="0" class="form-control aantal" data-price="65" value="0" type="number" id="schaat3">
+        </div>
+        <div class="col-md-2">
+            0
+        </div>
+    </div>
+    <div class="row">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Met veter (1,25 per paar)
+        </label>
+    </div>
+    <div class="row">
+        <label class="form-check-label">
+            <input type="checkbox" class="form-check-input">
+            Met beschermers (2,35 per paar)
+        </label>
+        <div class="col-md-2 offset-md-8">
+            Totaal:
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
