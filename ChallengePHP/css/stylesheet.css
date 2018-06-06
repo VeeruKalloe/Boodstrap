@@ -1,0 +1,32 @@
+
+body {
+    background-color: white;
+    margin-bottom: 100px;
+}
+
+section.inleiding {
+    background-color: lightgrey;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+
+.spotitube {
+    font-size: 4em;
+}
+
+.grey {
+    color: grey;
+}
+
+h3.titel {
+    text-align: left;
+    margin: 5px;
+}
+
+.albums {
+    width: 31%;
+    margin: 10px;
+    float: right;
+}
+
